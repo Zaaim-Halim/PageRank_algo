@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="graphe">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="nodes">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="node" type="nodetype" minOccurs="1" maxOccurs="unbounded" />
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="edges">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="edge" type="edgetype" minOccurs="1" maxOccurs="unbounded" />
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:complexType name="nodetype">
+      <xsd:attribute name="id" type="xsd:string" use="required" />
+   </xsd:complexType>
+   <xsd:complexType name="edgetype">
+      <xsd:attribute name="source" type="xsd:string" use="required" />
+      <xsd:attribute name="target" type="xsd:string" use="required" />
+   </xsd:complexType>
+</xsd:schema>
